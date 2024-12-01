@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+      html,body {
+        position: relative;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
       body {
-        background-color: #222222;
+        background-color: #222222;        
       }
       .overflow-hidden {
         overflow: hidden;
@@ -18,41 +24,41 @@
         display: none !important;
       }
       .preload {
-          z-index: 9999;
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #242B33;              
-        }
-        .preload-ring {
-          position: absolute;
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          animation: ring 2s linear infinite;
-        }
-        .preload-ring::before {
-          position: absolute;
-          content: '';
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 100%;
-          border-radius: 50%;        
-        }
-        .preload-text {
-          color: #737373;
-          font-size: 20px;
-          letter-spacing: 2px;    
-          line-height: 1.3;    
-          font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
-          animation: text 3s ease-in-out infinite;
-        }        
+        z-index: 9999;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #242B33;              
+      }
+      .preload-ring {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation: ring 2s linear infinite;
+      }
+      .preload-ring::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;        
+      }
+      .preload-text {
+        color: #737373;
+        font-size: 20px;
+        letter-spacing: 2px;    
+        line-height: 1.3;    
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+        animation: text 3s ease-in-out infinite;
+      }        
         @keyframes ring {
           0% {
             transform: rotate(0deg);
@@ -107,53 +113,53 @@
           } 
         }, 0); 
     </script>
-            <div id="app" class="app" style="opacity:0;">
-                <div class="panorama-slider">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/1.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/2.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/3.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/4.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/5.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/1.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/2.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/3.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/4.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/5.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/3.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/4.jpg"" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img/5.jpg"" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div> 
-                </div> 
-            </div> 
+    <div id="app" class="app" style="opacity:0;">
+      <div class="app-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="slide-image" src="img/2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="slide-image" src="img/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="slide-image" src="img/5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="slide-image" src="img/3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="slide-image" src="img/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="slide-image" src="img/5.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div> 
+      </div> 
+    </div> 
 </body>
 </html>
