@@ -6,7 +6,7 @@ import './style.scss';
 
 const swiper = new Swiper ('.swiper', {  
     //loop: true,
-    //slidesPerView: 1.5,   
+    slidesPerView: 1.5,   
     grabCursor: true,
     //centeredSlides: true,    
     //loopAdditionalSlides: 1, 

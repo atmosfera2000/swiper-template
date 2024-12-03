@@ -16,10 +16,6 @@
       .overflow-hidden {
         overflow: hidden;
       }
-      .opacity-0 {
-        opacity: 0;
-        transition: opacity 2ms ease-out;
-      }
       .d-none {
         display: none !important;
       }
@@ -85,26 +81,32 @@
         window.onload = () => {
             //if loading is not from cache it shows the loader
             if (resources[0].transferSize > 0 && resources[0].encodedBodySize > 0 && resources[0].transferSize > resources[0].encodedBodySize) {
-                setTimeout(removeLoader, 1000); //shows the loader at least in 1000 ms               
+                setTimeout(() => removeLoader(false), 1000); //shows the loader at least in 1000 ms               
             } else {
-                removeLoader();                     
+                removeLoader(true);                     
             }        
         };
             
-        function removeLoader() {
-            document.getElementById('preload').classList.add('d-none');
-            document.getElementById('app').style = 'opacity: 1; transition: opacity 1s ease-out';        
+        function removeLoader(isCache) {
+            document.getElementById('preload').classList.add('d-none');            
+            document.body.style = "";       
+
+            if (isCache) {
+              document.getElementById('app').style = 'opacity: 1'; 
+            } else {
+              document.getElementById('app').style = 'opacity: 1; transition: opacity 1s ease-out'; 
+            }
         } 
     </script>
     <title>Document</title>
 </head>
-<body class="overflow-hidden">
+<body style="overflow: hidden;">
     <div id="preload" class="preload">    
         <div class="preload-ring" style="display: none;"></div>
         <span class="preload-text" style="display: none;">Loading...</span> 
     </div>
     <script>
-        //setTimeout is needed to get a little time to load perfomance data by some browsers
+        //setTimeout is needed to get a little time to load perfomance data 
         setTimeout(() => {
           //if loading is not from cache it shows the loader
           if (resources[0].transferSize > 0 && resources[0].encodedBodySize > 0 && resources[0].transferSize > resources[0].encodedBodySize) {

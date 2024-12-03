@@ -7,8 +7,6 @@
 
 // Then add additional custom code here
 
-
-
 body {
     color: #fff;
     font-family: -apple-system,system-ui,Helvetica Neue,Helvetica,Arial,Segoe UI,Roboto,sans-serif;
@@ -20,13 +18,13 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .app-slider {   
     width: 100%;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: hidden;    
 }
 
 .swiper {  
