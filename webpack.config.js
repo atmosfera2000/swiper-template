@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require('autoprefixer');
 const CopyPlugin = require("copy-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+
 
 module.exports = {
     entry: './src/index.js',
@@ -32,6 +34,30 @@ module.exports = {
     ],
     optimization: {
         runtimeChunk: 'single',
+        minimizer: [
+            new ImageMinimizerPlugin({
+                minimizer: {
+                    implementation: ImageMinimizerPlugin.imageminMinify,
+                    options: {
+                        plugins: [
+                            "imagemin-gifsicle",
+                            "imagemin-mozjpeg",
+                            "imagemin-pngquant",
+                            "imagemin-svgo",
+                        ],
+                    },
+                },
+                generator: [
+                    {
+                        type: "asset",
+                        implementation: ImageMinimizerPlugin.imageminGenerate,
+                        options: {
+                            plugins: ["imagemin-webp"],
+                        },
+                    },
+                ],
+            }),
+        ],
     },
     module: {
         rules: [
@@ -59,8 +85,8 @@ module.exports = {
                                 }
                             }
                         },
-                        'sass-loader'
-                    ]
+                        'sass-loader',
+                ]
             },
         ]
     },
