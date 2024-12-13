@@ -7,11 +7,28 @@
 
 // Then add additional custom code here
 
+:root {
+    --swiper-pagination-bottom: 0;
+    --swiper-theme-color: rgb(182, 182, 182);
+    --swiper-pagination-bullet-inactive-color: rgb(201, 201, 201);
+    --swiper-pagination-bullet-inactive-opacity: .5;
+}
 
+html, 
+body, 
+.app,
+.app-slider {
+    height: 100%;
+}
+
+.app-slider {
+    display: flex;
+    align-items: center;   
+}
 
 .swiper {
-    width: 400px;  
-    //padding: 20px 200px;
+    width: 100%;
+    padding-bottom: 40px;      
 }
 
 .slide-image {
@@ -20,5 +37,6 @@
     object-fit: cover;
     pointer-events: none;
 }
+
 
 
